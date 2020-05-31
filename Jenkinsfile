@@ -4,13 +4,19 @@ pipeline {
     stage('Buzz Build') {
       steps {
         echo 'Bees Buzz'
-        sh './build.sh'
+        sh './jenkins/build.sh'
       }
     }
 
     stage('Buzz Test') {
       steps {
         sh './jenkins/test-all.sh'
+      }
+    }
+
+    stage('') {
+      steps {
+        archiveArtifacts(artifacts: ' target/*.jar', fingerprint: true)
       }
     }
 
