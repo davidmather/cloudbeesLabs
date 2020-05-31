@@ -16,7 +16,7 @@ pipeline {
 
     stage('error') {
       steps {
-        archiveArtifacts(artifacts: ' target/*.jar', fingerprint: true)
+        archiveArtifacts(artifacts: 'target/*.jar', fingerprint: true)
       }
     }
 
