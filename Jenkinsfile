@@ -20,5 +20,11 @@ pipeline {
       }
     }
 
+    stage('') {
+      steps {
+        junit '**/surefire-reports/**/*.xml'
+      }
+    }
+
   }
 }
